@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samue\\VScode\\softwareDesign\\ori\\ori.csproj": {}
+    "C:\\Users\\samue\\VScode\\softwareDesign\\FinalProject\\SoftwareDesign-QuestPDF\\ori.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samue\\VScode\\softwareDesign\\ori\\ori.csproj": {
+    "C:\\Users\\samue\\VScode\\softwareDesign\\FinalProject\\SoftwareDesign-QuestPDF\\ori.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samue\\VScode\\softwareDesign\\ori\\ori.csproj",
+        "projectUniqueName": "C:\\Users\\samue\\VScode\\softwareDesign\\FinalProject\\SoftwareDesign-QuestPDF\\ori.csproj",
         "projectName": "ori",
-        "projectPath": "C:\\Users\\samue\\VScode\\softwareDesign\\ori\\ori.csproj",
+        "projectPath": "C:\\Users\\samue\\VScode\\softwareDesign\\FinalProject\\SoftwareDesign-QuestPDF\\ori.csproj",
         "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samue\\VScode\\softwareDesign\\ori\\obj\\",
+        "outputPath": "C:\\Users\\samue\\VScode\\softwareDesign\\FinalProject\\SoftwareDesign-QuestPDF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
