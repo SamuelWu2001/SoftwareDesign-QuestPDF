@@ -31,8 +31,9 @@ class Program
                 page.DefaultTextStyle(x => x.FontSize(20));
     
                 page.Header()
-                    .Text("Hot5 Reload!")
-                    .SemiBold().FontSize(36).FontColor(Colors.Blue.Darken2);
+                    .AlignCenter()
+                    .Text("SoftwareDesign Final Project Presentation")
+                    .SemiBold().FontSize(30).FontColor(Colors.Blue.Darken3);
     
                 page.Content()
                     .PaddingVertical(1, Unit.Centimetre)
@@ -45,13 +46,29 @@ class Program
                             t.ColumnsDefinition(c =>
                             {
                                 c.RelativeColumn();
-                                c.RelativeColumn(3);
+                                c.RelativeColumn(2);
+                                c.RelativeColumn(2);
+                                c.RelativeColumn(2);
                             });
-    
-                            t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text("Visual Studio");
-                            t.Cell().Border(1).Padding(5).Text("Start in debug mode with 'Hot Reload on Save' enabled.");
-                            t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text("Command line");
-                            t.Cell().Border(1).Padding(5).Text("Run 'dotnet watch'.");
+
+                            t.Header(Header => {
+                                Header.Cell().Border(1).AlignCenter().Text("ID");
+                                Header.Cell().Border(1).AlignCenter().Text("Name");
+                                Header.Cell().Border(1).AlignCenter().Text("B-Day");
+                                Header.Cell().Border(1).AlignCenter().Text("Email");
+                            });
+
+                            foreach(var i in Enumerable.Range(1,15)) {
+                                var year = Placeholders.Random.Next(1980, 2015);
+                                var month = Placeholders.Random.Next(1, 12);
+                                var day = Placeholders.Random.Next(1, 30);
+                                t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text(i).FontSize(15);
+                                t.Cell().Border(1).Padding(5).Text(Placeholders.Name()).FontSize(15);
+                                t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text($"{year}/{month}/{day}").FontSize(15);
+                                t.Cell().Border(1).Padding(5).Text(Placeholders.Email()).FontSize(15);
+                            }
+
+                            t.Cell().Column(2).Row(3).Background(Colors.Blue.Lighten3).Text("Samuel");
                         });
     
                         x.Item().Text("Modify this line and the preview should show your changes instantly.");
@@ -61,7 +78,7 @@ class Program
                     .AlignCenter()
                     .Text(x =>
                     {
-                        x.Span("Page ");
+                        x.Span("Page ").FontColor("888777");
                         x.CurrentPageNumber();
                     });
             });
