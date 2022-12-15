@@ -111,16 +111,7 @@ namespace QuestPDF.Fluent
                 })
                 .ToList();
 
-            AddItemToLastTextBlock(items.First());
-
-            items
-                .Skip(1)
-                .Select(x => new TextBlock
-                {   
-                    Items = new List<ITextBlockItem> { x }
-                })
-                .ToList()
-                .ForEach(TextBlocks.Add);
+            items.ForEach(AddItemToLastTextBlock);
 
             return new TextSpanDescriptor(x => items.ForEach(y => y.Style = x));
         }
