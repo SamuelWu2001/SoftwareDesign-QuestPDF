@@ -77,18 +77,18 @@ namespace QuestPDF.Fluent
             handler(descriptor);
         }
         
+        public void Content(Action<TableCellDescriptor> handler)
+        {
+            var descriptor = new TableCellDescriptor(ContentTable.Cells);
+            handler(descriptor);
+        }
+        
         public void Footer(Action<TableCellDescriptor> handler)
         {
             var descriptor = new TableCellDescriptor(FooterTable.Cells);
             handler(descriptor);
         }
         
-        public ITableCellContainer Cell()
-        {
-            var cell = new TableCell();
-            ContentTable.Cells.Add(cell);
-            return cell;
-        }
 
         internal IElement CreateElement()
         {

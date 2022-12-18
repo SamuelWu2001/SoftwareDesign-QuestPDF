@@ -58,17 +58,20 @@ class Program
                                 Header.Cell().Border(1).AlignCenter().Text("Email");
                             });
 
-                            foreach(var i in Enumerable.Range(1,15)) {
-                                var year = Placeholders.Random.Next(1980, 2015);
-                                var month = Placeholders.Random.Next(1, 12);
-                                var day = Placeholders.Random.Next(1, 30);
-                                t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text(i).FontSize(15);
-                                t.Cell().Border(1).Padding(5).Text(Placeholders.Name()).FontSize(15);
-                                t.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text($"{year}/{month}/{day}").FontSize(15);
-                                t.Cell().Border(1).Padding(5).Text(Placeholders.Email()).FontSize(15);
-                            }
+                            t.Content(Content => {
+                                foreach(var i in Enumerable.Range(1,15)) {
+                                    var year = Placeholders.Random.Next(1980, 2015);
+                                    var month = Placeholders.Random.Next(1, 12);
+                                    var day = Placeholders.Random.Next(1, 30);
+                                    Content.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text(i).FontSize(15);
+                                    Content.Cell().Border(1).Padding(5).Text(Placeholders.Name()).FontSize(15);
+                                    Content.Cell().Border(1).Background(Colors.Grey.Lighten3).Padding(5).Text($"{year}/{month}/{day}").FontSize(15);
+                                    Content.Cell().Border(1).Padding(5).Text(Placeholders.Email()).FontSize(15);
+                                }
 
-                            t.Cell().Column(2).Row(3).Background(Colors.Blue.Lighten3).Text("Samuel");
+                                Content.Cell().Column(2).Row(3).Background(Colors.Blue.Lighten3).Text("Samuel");
+                            });
+                            
                         });
     
                         x.Item().Text("Modify this line and the preview should show your changes instantly.");
