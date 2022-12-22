@@ -69,7 +69,7 @@ class Program
                                     Content.Cell().Border(1).Padding(5).Text(Placeholders.Email()).FontSize(15);
                                 }
 
-                                Content.Cell().Column(2).Row(3).Background(Colors.Blue.Lighten3).Text("Samuel");
+                                Content.Cell().Column(2).Row(3).RowSpan(3).Background(Colors.Blue.Lighten3);
                             });
                             
                         });
