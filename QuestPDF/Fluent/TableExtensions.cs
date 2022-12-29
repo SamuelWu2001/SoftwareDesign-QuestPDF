@@ -40,7 +40,7 @@ namespace QuestPDF.Fluent
             Cells = cells;
         }
         
-        public IContainer Cell()
+        public ITableCellContainer Cell()
         {
             var cell = new TableCell();
             Cells.Add(cell);
@@ -131,7 +131,7 @@ namespace QuestPDF.Fluent
 
     public static class TableCellExtensions
     {
-        private static IContainer TableCell(this IContainer element, Action<TableCell> handler)
+        private static ITableCellContainer TableCell(this ITableCellContainer element, Action<TableCell> handler)
         {
             if (element is TableCell tableCell)
                 handler(tableCell);
@@ -139,22 +139,22 @@ namespace QuestPDF.Fluent
             return element;
         }
         
-        public static IContainer Column(this IContainer tableCellContainer, uint value)
+        public static ITableCellContainer Column(this ITableCellContainer tableCellContainer, uint value)
         {
             return tableCellContainer.TableCell(x => x.Column = (int)value);
         }
         
-        public static IContainer ColumnSpan(this IContainer tableCellContainer, uint value)
+        public static ITableCellContainer ColumnSpan(this ITableCellContainer tableCellContainer, uint value)
         {
             return tableCellContainer.TableCell(x => x.ColumnSpan = (int)value);
         }
         
-        public static IContainer Row(this IContainer tableCellContainer, uint value)
+        public static ITableCellContainer Row(this ITableCellContainer tableCellContainer, uint value)
         {
             return tableCellContainer.TableCell(x => x.Row = (int)value);
         }
         
-        public static IContainer RowSpan(this IContainer tableCellContainer, uint value)
+        public static ITableCellContainer RowSpan(this ITableCellContainer tableCellContainer, uint value)
         {
             return tableCellContainer.TableCell(x => x.RowSpan = (int)value);
         }
